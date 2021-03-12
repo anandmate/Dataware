@@ -1,0 +1,65 @@
+{% extends 'application/basic.html' %}
+{% block title %} Result {% endblock %}
+{% block body %}
+<div class="container my-5">
+    <h4>Result: </h4>
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}" id="msg">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    <div class="display">
+    	<h5>Your SKill Levels:</h5>
+        PHP:
+        <div class="progress">
+            <div class="progress-bar bg-success" role="progressbar" style="width: {{ php }}%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">{{ php }}%</div>
+        </div>
+        HTML:
+        <div class="progress">
+            <div class="progress-bar bg-info" role="progressbar" style="width: {{ html }}%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">{{ html }}%</div>
+        </div>
+        CSS:
+        <div class="progress">
+            <div class="progress-bar bg-warning" role="progressbar" style="width: {{ css }}%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">{{ css }}%</div>
+        </div>
+        WordPress:
+        <div class="progress">
+            <div class="progress-bar bg-danger" role="progressbar" style="width: {{ wp }}%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">{{ wp }}%</div>
+        </div>
+        Bootstrap:
+        <div class="progress">
+            <div class="progress-bar bg-success" role="progressbar" style="width: {{ bs }}%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">{{ bs }}%</div>
+        </div>
+        R:
+        <div class="progress">
+            <div class="progress-bar bg-info" role="progressbar" style="width: {{ r }}%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">{{ r }}%</div>
+        </div>
+        Python:
+        <div class="progress">
+            <div class="progress-bar bg-warning" role="progressbar" style="width: {{ py }}%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">{{ py }}%</div>
+        </div>
+        Statistics:
+        <div class="progress">
+            <div class="progress-bar bg-danger" role="progressbar" style="width: {{ st }}%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">{{ st }}%</div>
+        </div>
+        Machine Learning:
+        <div class="progress">
+            <div class="progress-bar bg-success" role="progressbar" style="width: {{ ml }}%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">{{ ml }}%</div>
+        </div>
+    </div>
+    <br><br>
+    <div class="alert alert-success" role="alert">
+        <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+        Want to enhance your skills ? <a href="http://learntricksedutech.com/" class="alert-link">
+        <button class="btn btn-danger">Click Here</button>
+        </a></div>
+            <div class="col-3"></div></div>
+    </div>
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'application/basic.html' %}
+{% block title %} Test {% endblock %}
+{% block body %}
+
+<div class="container my-4">
+  <h3>Skill Test</h3>
+	<form action="/result" method="post">
+	{% for i in questions_all %}
+<div class="card">
+  <div class="card-header">
+    Q. {{ i.question }}
+  </div>
+  <div class="card-body">
+    <input type="radio" name="{{ i.answer }}" value="{{ i.option1 }}"> {{ i.option1 }}<br>
+    <input type="radio" name="{{ i.answer }}" value="{{ i.option2 }}"> {{ i.option2 }}<br>
+    <input type="radio" name="{{ i.answer }}" value="{{ i.option3 }}"> {{ i.option3 }}<br>
+    <input type="radio" name="{{ i.answer }}" value="{{ i.option4 }}"> {{ i.option4 }}<br>
+  </div>
+</div>
+{% endfor %}
+{% csrf_token %}
+<div class="row">
+<div class="col-10"></div>
+<div class="col-2">
+<button class="btn btn-secondary my-2">Submit Test</button></div>
+</form>
+  
+</div>
+{% endblock %}

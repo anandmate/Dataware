@@ -1,0 +1,79 @@
+{% extends 'application/basic.html' %}
+{% block title %} Rating {% endblock %}
+{% block body %}
+<div class="container mt-3">
+    <form action="/calc" method="get">
+        <h3>Rate Yourself</h3>
+        <p>Rate your skills from 0 to 10.</p>
+        PHP:
+        <input type="range" name="php" min="0" max="10" onchange="updateinput1(this.value);">
+        <input type="number" name="p" id="textinput1" value=""><br>
+        HTML:
+        <input type="range" name="html" min="0" max="10" onchange="updateinput2(this.value);">
+        <input type="number" name="h" id="textinput2" value=""><br>
+        CSS:
+        <input type="range" name="css" min="0" max="10" onchange="updateinput3(this.value);">
+        <input type="number" name="c" id="textinput3" value=""><br>
+        WordPress:
+        <input type="range" name="wpress" min="0" max="10" onchange="updateinput4(this.value);">
+        <input type="number" name="w" id="textinput4" value=""><br>
+        Bootstrap:
+        <input type="range" name="bstarp" min="0" max="10" onchange="updateinput5(this.value);">
+        <input type="number" name="b" id="textinput5" value=""><br>
+        R tool:
+        <input type="range" name="rtool" min="0" max="10" onchange="updateinput6(this.value);">
+        <input type="number" name="r" id="textinput6" value=""><br>
+        Python:
+        <input type="range" name="python" min="0" max="10" onchange="updateinput7(this.value);">
+        <input type="number" name="py" id="textinput7" value=""><br>
+        Statistics:
+        <input type="range" name="stats" min="0" max="10" onchange="updateinput8(this.value);">
+        <input type="number" name="stat" id="textinput8" value=""><br>
+        Machine Learning:
+        <input type="range" name="Machine" min="0" max="10" onchange="updateinput9(this.value);">
+        <input type="number" name="ml" id="textinput9" value=""><br>
+        <input type="submit">
+    </form>
+</div>
+<div>
+{% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}" id="msg">
+       {{ message }}
+   </div>
+    {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}
+{% block js %}
+<script>
+function updateinput1(val) {
+    document.getElementById('textinput1').value = val;
+}
+function updateinput2(val){
+    document.getElementById('textinput2').value = val;
+}
+function updateinput3(val){
+    document.getElementById('textinput3').value = val;
+}
+function updateinput4(val){
+    document.getElementById('textinput4').value = val;
+}
+function updateinput5(val){
+    document.getElementById('textinput5').value = val;
+}
+function updateinput6(val){
+    document.getElementById('textinput6').value = val;
+}
+function updateinput7(val){
+    document.getElementById('textinput7').value = val;
+}
+function updateinput8(val){
+    document.getElementById('textinput8').value = val;
+}
+function updateinput9(val){
+    document.getElementById('textinput9').value = val;
+}
+</script>
+{% endblock %}
+

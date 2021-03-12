@@ -1,0 +1,37 @@
+{% extends 'application/basic.html' %}
+{% block title %} Home {% endblock %}
+{% block body %}
+<div class="container-md my-4">
+<div class="alert alert-success" role="alert">
+  <h4 class="alert-heading">Well come!</h4>
+  <p>	Skill Tests are a collection of language/ technology-based MCQ questions which help you assess yourself, improve your knowledge and move up the leaderboard. In fact, with 1000s of users taking these tests daily, Skill Tests are one of the world's most trusted assessments for benchmarking technology-skills.
+Each Skill Test is covers a set of topics, and is of a certain level of difficulty. We have refreshed the questions in consultation with industry experts, to up the level of Skill Tests.</p>
+</div>
+</div>
+<div class="container-md my-5">
+	<div class="row row-cols-1 row-cols-md-2">
+  <div class="col mb-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Test Your Skills</h5>
+        <p class="card-text">Answer the test and get your score regarding different programming languages.</p>
+        <form action="/test" method="get">
+        	<input class="btn btn-primary" type="submit" value="Get Test">
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Rate Yourself</h5>
+        <p class="card-text">Rate yourself on the basis of skills.</p>
+        <form action="/rating" method="get">
+        	<input class="btn btn-primary" type="submit" value="Rate">
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+{% endblock %}
